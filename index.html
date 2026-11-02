@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atmospheric landscape and seascape photography by Deanna Miranda. Cinematic moments along the Texas coast and beyond.">
+  <title>Deanna Miranda | Landscape & Seascape Photography</title>
+  <style>
+    :root {
+      --ink: #eeeae3;
+      --muted: #aaa69f;
+      --bg: #111311;
+      --panel: #191c19;
+      --line: rgba(238,234,227,.16);
+      --accent: #b9a58a;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      position: absolute; z-index: 5; top: 0; left: 0; width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 28px 6vw; border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .brand { font-family: var(--serif); letter-spacing: .08em; font-size: 15px; text-transform: uppercase; }
+    nav { display: flex; gap: 28px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+    nav a { color: #d1cdc5; transition: color .2s; }
+    nav a:hover { color: white; }
+    .hero {
+      min-height: 92vh; display: flex; align-items: end; position: relative; overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(8,12,12,.76), rgba(8,12,12,.12) 75%),
+        linear-gradient(0deg, rgba(8,12,12,.88), transparent 70%),
+        url("images/hero-coast.jpg") center 48% / cover no-repeat,
+        #26302f;
+    }
+    .hero-inner { padding: 0 10vw 12vh; max-width: 900px; position: relative; }
+    .eyebrow { color: var(--accent); font-size: 10px; letter-spacing: .32em; text-transform: uppercase; margin-bottom: 22px; }
+    h1 { font: normal clamp(48px, 8vw, 104px)/.98 var(--serif); letter-spacing: -.045em; margin: 0 0 24px; }
+    .hero p { max-width: 460px; color: #d1d0ca; line-height: 1.8; font-size: 14px; }
+    .button {
+      display: inline-block; margin-top: 26px; padding: 14px 22px; border: 1px solid rgba(238,234,227,.55);
+      font-size: 10px; letter-spacing: .2em; text-transform: uppercase; transition: .2s;
+    }
+    .button:hover { background: var(--ink); color: var(--bg); }
+    section { padding: 110px 8vw; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 42px; }
+    .section-head h2 { font: normal clamp(36px, 5vw, 58px)/1 var(--serif); margin: 0; }
+    .section-head p { max-width: 360px; color: var(--muted); font-size: 12px; line-height: 1.8; margin: 0; }
+    .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .photo { position: relative; overflow: hidden; background: #252b29; min-height: 260px; }
+    .photo:nth-child(1), .photo:nth-child(4) { grid-column: span 7; }
+    .photo:nth-child(2), .photo:nth-child(3) { grid-column: span 5; }
+    .photo:nth-child(n+5) { grid-column: span 4; }
+    .photo img { display: block; width: 100%; height: 100%; min-height: 300px; object-fit: cover; filter: saturate(.78); transition: transform .7s, filter .7s; }
+    .photo:hover img { transform: scale(1.035); filter: saturate(1); }
+    .photo figcaption {
+      position: absolute; left: 20px; bottom: 18px; color: white; font: 20px var(--serif);
+      text-shadow: 0 1px 12px #000;
+    }
+    .about { background: var(--panel); display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; align-items: center; }
+    .about h2 { font: normal clamp(38px, 5vw, 62px)/1.05 var(--serif); margin: 0; }
+    .about-copy { color: #c2beb6; font-size: 14px; line-height: 2; max-width: 540px; }
+    .about-copy .signature { font: italic 24px var(--serif); color: var(--accent); margin-top: 26px; }
+    .contact { text-align: center; padding-top: 120px; padding-bottom: 120px; }
+    .contact h2 { font: normal clamp(42px, 6vw, 72px)/1 var(--serif); margin: 0 0 20px; }
+    .contact p { color: var(--muted); font-size: 13px; line-height: 1.8; }
+    footer { border-top: 1px solid var(--line); padding: 26px 8vw; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    @media (max-width: 700px) {
+      .topbar { padding: 20px 6vw; align-items: flex-start; }
+      nav { gap: 13px; font-size: 9px; }
+      .brand { font-size: 12px; }
+      .hero { min-height: 82vh; }
+      .hero-inner { padding: 0 7vw 10vh; }
+      section { padding: 76px 7vw; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 18px; }
+      .photo:nth-child(n) { grid-column: span 12; }
+      .photo img { min-height: 260px; max-height: 420px; }
+      .about { grid-template-columns: 1fr; gap: 28px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">Deanna Miranda</a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Featured coastal photograph">
+      <div class="hero-inner">
+        <div class="eyebrow">Landscape · Seascape · Atmosphere</div>
+        <h1>Where the light<br>leaves a feeling.</h1>
+        <p>Atmospheric landscapes and seascapes shaped by shifting light, restless water, and the quiet drama of the Texas coast.</p>
+        <a class="button" href="#work">Explore the collection</a>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Selected photographs</div>
+          <h2>Coastal Texas<br>and beyond.</h2>
+        </div>
+        <p>A collection of places, weather, and fleeting moments. Each frame is an invitation to pause and feel the scene.</p>
+      </div>
+
+      <!-- Replace the image paths below with your own files in the images folder.
+           Keep filenames simple, for example: coastal-sunrise.jpg -->
+      <div class="gallery">
+        <figure class="photo"><img src="images/coastal-scenes/web/seascape-city-bay-1.jpg" alt="Sunrise over the Texas coast"><figcaption>First Light</figcaption></figure>
+        <figure class="photo"><img src="images/coastal-scenes/web/sunrise-under-bridge-stack.jpg" alt="Moving water beneath a coastal boardwalk"><figcaption>Under the Boardwalk</figcaption></figure>
+        <figure class="photo"><img src="images/coastal-scenes/web/Maritime_Horizon_10x20.jpg" alt="Moody shoreline beneath a dramatic sky"><figcaption>Between Tides</figcaption></figure>
+        <figure class="photo"><img src="images/coastal-scenes/web/seascape-city-bay-1.jpg" alt="Open water and distant horizon"><figcaption>Open Water</figcaption></figure>
+        <figure class="photo"><img src="images/coastal-scenes/web/Sunset City View with Bridge-3491.jpg" alt="A quiet detail along the coast"><figcaption>Small Details</figcaption></figure>
+        <figure class="photo"><img src="images/coastal-scenes/web/Between Storms.jpg" alt="Atmospheric landscape after rain"><figcaption>After the Rain</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <div class="eyebrow">Behind the lens</div>
+        <h2>More than a view.<br>A state of mind.</h2>
+      </div>
+      <div class="about-copy">
+        <p>I'm Deanna Miranda, a photographer drawn to atmosphere, cinematic light, and the character of a place. My work explores the Texas coast through changing skies, moving water, shadow, and the unexpected beauty found in ordinary moments.</p>
+        <p>I’m interested in photographs that do more than show where you are. I want them to suggest what it felt like to be there.</p>
+        <div class="signature">Deanna Miranda</div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Let's make something<br>memorable.</h2>
+      <p>For print inquiries, collaborations, or photography projects:</p>
+      <!-- Replace this address with the email you want visitors to use. -->
+      <a class="button" href="mirandaphotography.tx@gmail.com">Email Deanna</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Deanna Miranda Photography</span>
+    <span>Made with a little coastal atmosphere</span>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

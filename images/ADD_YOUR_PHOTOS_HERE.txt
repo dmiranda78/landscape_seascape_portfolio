@@ -1,0 +1,1 @@
+Add your image files to this folder. See README.md for the exact filenames expected by the portfolio.
